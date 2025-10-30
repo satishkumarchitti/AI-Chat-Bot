@@ -1,0 +1,42 @@
+.workspace-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.workspace-header .back-btn {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.workspace-header .back-btn:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.workspace-container {
+  height: calc(100vh - 120px);
+  padding: 16px;
+  overflow: hidden;
+}
+
+.workspace-panel {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .workspace-container {
+    height: auto;
+    overflow: visible;
+  }
+
+  .workspace-panel {
+    height: 500px;
+    margin-bottom: 16px;
+  }
+}

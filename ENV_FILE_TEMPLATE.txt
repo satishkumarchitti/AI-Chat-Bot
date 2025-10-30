@@ -1,0 +1,31 @@
+# ═══════════════════════════════════════════════════════════════
+# .env File Template - Copy this to backend/.env
+# ═══════════════════════════════════════════════════════════════
+
+# REQUIRED: Google Gemini API Key for AI Features
+# Get your key from: https://aistudio.google.com/app/apikey
+GOOGLE_API_KEY=paste_your_api_key_here
+
+# ───────────────────────────────────────────────────────────────
+# Example (DO NOT use this - get your own key):
+# GOOGLE_API_KEY=AIzaSyDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ───────────────────────────────────────────────────────────────
+
+# Optional: Override database URL (if different from config.py)
+# DATABASE_URL=postgresql://postgres:GK@post9966@localhost:5432/ai_doc_extractor
+
+# Optional: Override JWT secret (for production)
+# SECRET_KEY=your_secret_key_here
+
+# Optional: Debug mode
+# DEBUG=True
+
+# ═══════════════════════════════════════════════════════════════
+# IMPORTANT NOTES:
+# ═══════════════════════════════════════════════════════════════
+# 1. Remove "paste_your_api_key_here" and add your actual key
+# 2. No spaces around the = sign
+# 3. No quotes needed around the value
+# 4. Save the file as ".env" in the backend folder
+# 5. Restart the backend server after saving
+# ═══════════════════════════════════════════════════════════════

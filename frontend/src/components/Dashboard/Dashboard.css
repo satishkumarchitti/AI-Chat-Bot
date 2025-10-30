@@ -1,0 +1,30 @@
+.dashboard-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-container .card {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.dashboard-container .table {
+  margin-bottom: 0;
+}
+
+.dashboard-container .table td {
+  vertical-align: middle;
+}
+
+.dashboard-container .input-group-text {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dashboard-container .form-control {
+  border-color: var(--border-color);
+}

@@ -1,0 +1,299 @@
+# AI Document Extractor - Full-Stack Application
+
+A comprehensive AI-powered web application that extracts structured data from utility bills and receipts (image/PDF files), displays the extracted data interactively in a three-panel layout with user authentication and a chat interface for Q&A on the extracted data.
+
+## 🚀 Features
+
+### Frontend (React)
+- **Three-Panel Layout**:
+  - **Document Viewer** (Left): Display uploaded documents with zoom/pan capabilities
+  - **Data Viewer** (Middle): Display and edit extracted structured data
+  - **Chat Interface** (Right): AI-powered Q&A about the document
+- **User Authentication**: Secure JWT-based authentication
+- **Theme System**: Light/Dark mode with persistent preferences
+- **Redux State Management**: Centralized state management
+- **Responsive Design**: Mobile and desktop optimized
+- **Document Management**: Upload, view, delete documents
+
+### Backend (FastAPI + Python)
+- **RESTful API**: Fast and efficient API endpoints
+- **JWT Authentication**: Secure user authentication
+- **AI Integration**: Gemini AI with LangGraph for data extraction
+- **PostgreSQL Database**: Robust data storage
+- **Document Processing**: Support for images and PDFs
+- **Chat System**: AI-powered Q&A with context awareness
+
+## 🛠️ Technology Stack
+
+### Frontend
+- React.js 18.2
+- Redux Toolkit with Redux Persist
+- React Router DOM
+- Reactstrap (Bootstrap 5)
+- Axios for API calls
+- React Icons
+
+### Backend
+- Python 3.9+
+- FastAPI
+- PostgreSQL
+- SQLAlchemy ORM
+- Google Gemini AI
+- LangChain & LangGraph
+- JWT Authentication (python-jose)
+- Bcrypt password hashing
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v16 or higher)
+- Python (v3.9 or higher)
+- PostgreSQL (v12 or higher)
+- Google Gemini API key
+
+## 🔧 Installation
+
+### 1. Clone the Repository
+```bash
+cd ai-doc-extractor-004
+```
+
+### 2. Backend Setup
+
+#### Install Python Dependencies
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+#### Configure Environment Variables
+Create a `.env` file in the `backend` directory:
+```env
+# Database Configuration
+DATABASE_URL=postgresql://username:password@localhost:5432/ai_doc_extractor
+
+# JWT Configuration
+SECRET_KEY=your-secret-key-here-change-in-production
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+
+# Google Gemini API
+GOOGLE_API_KEY=your-gemini-api-key-here
+
+# Application Configuration
+DEBUG=True
+UPLOAD_DIR=./uploads
+MAX_UPLOAD_SIZE=10485760
+```
+
+#### Set Up PostgreSQL Database
+```bash
+# Create database
+createdb ai_doc_extractor
+
+# Or using psql
+psql -U postgres
+CREATE DATABASE ai_doc_extractor;
+\q
+```
+
+### 3. Frontend Setup
+
+#### Install Node Dependencies
+```bash
+cd frontend
+npm install
+```
+
+#### Configure Environment (Optional)
+Create a `.env` file in the `frontend` directory if you need to customize the API URL:
+```env
+REACT_APP_API_URL=http://localhost:8000/api
+```
+
+## 🚀 Running the Application
+
+### Start Backend Server
+```bash
+cd backend
+python main.py
+```
+The backend will run on `http://localhost:8000`
+- API Documentation: `http://localhost:8000/docs`
+- Health Check: `http://localhost:8000/health`
+
+### Start Frontend Development Server
+```bash
+cd frontend
+npm start
+```
+The frontend will run on `http://localhost:3000`
+
+## 📖 Usage
+
+### 1. Register/Login
+- Navigate to `http://localhost:3000`
+- Create a new account or login with existing credentials
+
+### 2. Upload Document
+- Click "Upload Document" button
+- Select an image (JPEG, PNG) or PDF file
+- The document will be processed automatically
+
+### 3. View Extracted Data
+- **Left Panel**: View the uploaded document with zoom controls
+- **Middle Panel**: See extracted structured data
+- Edit fields manually if needed
+- Export data as JSON or CSV
+
+### 4. Chat with AI
+- **Right Panel**: Ask questions about the document
+- Example questions:
+  - "What is the total amount?"
+  - "Who is the vendor?"
+  - "What is the date on this document?"
+  - "List all line items"
+
+## 🔑 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/profile` - Get user profile
+- `POST /api/auth/logout` - Logout user
+
+### Documents
+- `POST /api/documents/upload` - Upload document
+- `GET /api/documents` - Get all documents
+- `GET /api/documents/{id}` - Get specific document
+- `GET /api/documents/{id}/extracted-data` - Get extracted data
+- `PUT /api/documents/{id}/extracted-data` - Update extracted data
+- `DELETE /api/documents/{id}` - Delete document
+- `GET /api/documents/{id}/export/{format}` - Export data (JSON/CSV)
+
+### Chat
+- `POST /api/chat/message` - Send message and get AI response
+- `GET /api/chat/history/{document_id}` - Get chat history
+- `DELETE /api/chat/history/{document_id}` - Clear chat history
+
+## 📁 Project Structure
+
+```
+ai-doc-extractor-004/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Layout/
+│   │   │   └── Workspace/
+│   │   ├── redux/
+│   │   │   ├── slices/
+│   │   │   └── store.js
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+├── backend/
+│   ├── routers/
+│   │   ├── auth_router.py
+│   │   ├── document_router.py
+│   │   └── chat_router.py
+│   ├── ai_service.py
+│   ├── auth.py
+│   ├── config.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── main.py
+│   └── requirements.txt
+└── README.md
+```
+
+## 🎨 Features in Detail
+
+### Document Extraction
+The AI extracts structured data including:
+- Vendor name and address
+- Document type and number
+- Dates (issue date, due date)
+- Amounts (total, tax, subtotal)
+- Currency
+- Line items
+- Payment method
+- Account number
+
+### Chat Interface
+- Context-aware AI responses
+- Chat history persistence
+- Natural language understanding
+- References extracted data
+- Conversation continuity
+
+### Theme System
+- Light and Dark modes
+- Smooth transitions
+- Persistent user preference
+- Consistent styling across components
+
+## 🔒 Security
+
+- JWT-based authentication
+- Bcrypt password hashing
+- Protected API endpoints
+- CORS configuration
+- File type validation
+- User-document isolation
+
+## 🐛 Troubleshooting
+
+### Backend Issues
+- **Database Connection Error**: Check PostgreSQL is running and credentials are correct
+- **Import Error**: Ensure all dependencies are installed: `pip install -r requirements.txt`
+- **Gemini API Error**: Verify your `GOOGLE_API_KEY` is set correctly
+
+### Frontend Issues
+- **Port Already in Use**: Change port with `PORT=3001 npm start`
+- **API Connection Error**: Ensure backend is running on port 8000
+- **Dependencies Error**: Delete `node_modules` and run `npm install` again
+
+## 📝 Environment Variables
+
+### Backend (.env)
+- `DATABASE_URL`: PostgreSQL connection string
+- `SECRET_KEY`: JWT secret key
+- `GOOGLE_API_KEY`: Gemini AI API key
+- `UPLOAD_DIR`: Directory for uploaded files
+- `DEBUG`: Enable/disable debug mode
+
+### Frontend (.env)
+- `REACT_APP_API_URL`: Backend API URL (optional)
+
+## 🚧 Future Enhancements
+
+- Multi-page PDF support with page navigation
+- Batch document upload
+- Advanced search and filtering
+- Document comparison
+- Email notifications
+- Mobile app version
+- OCR for handwritten notes
+- Multi-language support
+
+## 📄 License
+
+This project is for educational and demonstration purposes.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## 📧 Support
+
+For questions or issues, please create an issue in the repository.
+
+---
+
+Built with ❤️ using React, FastAPI, and Google Gemini AI

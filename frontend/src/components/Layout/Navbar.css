@@ -1,0 +1,43 @@
+.navbar-custom {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.navbar-custom .navbar-brand {
+  color: var(--text-primary) !important;
+  font-size: 1.25rem;
+}
+
+.navbar-custom .theme-toggle-btn {
+  color: var(--text-primary);
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar-custom .theme-toggle-btn:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.navbar-custom .user-dropdown {
+  color: var(--text-primary) !important;
+  cursor: pointer;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.navbar-custom .dropdown-item {
+  color: var(--text-primary);
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.navbar-custom .dropdown-divider {
+  border-color: var(--border-color);
+}

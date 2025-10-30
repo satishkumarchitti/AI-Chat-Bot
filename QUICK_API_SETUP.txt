@@ -1,0 +1,53 @@
+═══════════════════════════════════════════════════════════════
+  QUICK SETUP - Google Gemini API Key (3 Minutes)
+═══════════════════════════════════════════════════════════════
+
+STEP 1: GET YOUR API KEY (1 minute)
+───────────────────────────────────────────────────────────────
+1. Visit: https://aistudio.google.com/app/apikey
+2. Sign in with Google
+3. Click "Create API Key"
+4. Copy the key (starts with "AIzaSy...")
+
+STEP 2: ADD TO YOUR APP (1 minute)
+───────────────────────────────────────────────────────────────
+Open this file in your editor:
+  📁 backend\.env
+
+Add this line (replace with your actual key):
+  GOOGLE_API_KEY=AIzaSyDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Save the file.
+
+STEP 3: RESTART BACKEND (30 seconds)
+───────────────────────────────────────────────────────────────
+In your backend terminal:
+  1. Press Ctrl+C to stop
+  2. Run: .\venv\Scripts\python.exe main.py
+
+DONE! ✅
+───────────────────────────────────────────────────────────────
+Now test:
+  • Upload a document → Should process automatically
+  • Open document → Chat should work
+
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+───────────────────────────────────────────────────────────────
+❌ Still not working?
+   → Check backend terminal for errors
+   → Make sure .env file is in backend folder
+   → Verify no extra spaces in API key
+
+❌ "API key not valid" error?
+   → Copy the key again from Google AI Studio
+   → Make sure you copied the entire key
+
+❌ Extraction takes too long?
+   → Normal for first request (model initialization)
+   → Subsequent requests will be faster
+
+═══════════════════════════════════════════════════════════════
+Full guide: See SETUP_GEMINI_API.md
+═══════════════════════════════════════════════════════════════
