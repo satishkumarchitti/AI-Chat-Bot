@@ -41,7 +41,6 @@
   overflow: auto;
 }
 
-/* Responsive adjustments */
 @media (max-width: 991px) {
   .workspace-container {
     height: auto;

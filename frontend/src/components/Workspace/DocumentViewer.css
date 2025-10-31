@@ -27,7 +27,6 @@
 .document-container img {
   display: block;
   margin: 0 auto;
-  /* max-height: calc(100vh - 250px); */
   object-fit: contain;
 }
 
@@ -41,7 +40,6 @@
 
 .pdf-viewer {
   width: 100%;
-  /* height: calc(100vh - 250px); */
   overflow: auto;
 }
 

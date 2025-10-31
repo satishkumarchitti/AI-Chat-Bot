@@ -12,7 +12,6 @@
 
 .data-viewer-body {
   overflow-y: auto;
-  /* max-height: calc(100vh - 250px); */
 }
 
 .data-viewer-body .form-group {
