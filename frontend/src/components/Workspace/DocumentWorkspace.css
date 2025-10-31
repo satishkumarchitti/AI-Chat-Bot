@@ -5,6 +5,17 @@
   align-items: center;
 }
 
+.workspace-container .card,
+.workspace-container .card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-container .card-body {
+  overflow: auto;
+}
+
 .workspace-header .back-btn {
   color: var(--text-primary);
   text-decoration: none;
@@ -25,7 +36,9 @@
 
 .workspace-panel {
   height: 100%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 /* Responsive adjustments */
