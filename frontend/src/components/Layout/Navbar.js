@@ -42,16 +42,7 @@ const Navbar = () => {
       </NavbarBrand>
       
       <Nav className="ms-auto" navbar>
-        <NavItem className="me-3">
-          <Button
-            color="link"
-            onClick={handleThemeToggle}
-            className="theme-toggle-btn"
-            title={mode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-          >
-            {mode === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
-          </Button>
-        </NavItem>
+    
         
         <NavItem>
           <UncontrolledDropdown>
