@@ -284,14 +284,6 @@ The development of this AI Document Extractor followed an iterative approach:
 ![Document Viewer](screenshots/document_viewer.png)
 *Three-panel layout: Document viewer (left), extracted data (middle), chat interface (right)*
 
-#### Data Extraction Example
-![Data Extraction](screenshots/data_extraction.png)
-*Example of extracted structured data from a utility bill*
-
-
-#### Chat Interface
-![Chat Interface](screenshots/chat_interface.png)
-*AI-powered Q&A interface with conversation history*
 
 ### Usage Examples
 
